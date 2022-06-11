@@ -55,16 +55,18 @@ response(200)
     }
 ]
 
-(6) /GET  /consulta/antiga
-request(200)
-{
-    "nome": "",
-    "preco": 0.0,
-    "data": "2022-06-00",
-    "assunto":"",
-    "usuario: 0
-}
 
+//TA ERRADOOOOOOOOOOOOOOOOOOOOOOOO
+(6) /GET  /consulta/antiga       O
+request(200)                     O
+{                                O
+    "nome": "",                  O
+    "preco": 0.0,                O
+    "data": "2022-06-00",        O
+    "assunto":"",                O
+    "usuario: 0                  O
+}                                O
+000000000000000000000000000000000O
 (7) /PUT  /consulta/proxima 
 
 request(200)
