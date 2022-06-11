@@ -17,7 +17,7 @@ export async function adicionarConsulta(consulta){
 export async function deletarFIlme(id){
     const comando = 
     ` DELETE FROM TB_CONSULTA
-                 WHERE ID_CONSULTA = 1;`;
+                 WHERE ID_CONSULTA = ?`;
     const [resposta] = await con.queri(comando, [id]);
     return resposta.affectedRows;
 }
