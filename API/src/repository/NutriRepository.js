@@ -14,5 +14,22 @@ export async function adicionarConsulta(consulta){
 }
 
 //deletar consulta(4)
+export async function deletarFIlme(id){
+    const comando = 
+    ` DELETE FROM TB_CONSULTA
+                 WHERE ID_CONSULTA = 1;`;
+    const [resposta] = await con.queri(comando, [id]);
+    return resposta.affectedRows;
+}
 
 //alterar anotações(8)
+
+export async function alterarAnotação(id, consulta) {
+    const comando = 
+        `UPDATE TB_CONSULTA
+            SET DS_ASSUNTO         = ?
+          WHERE ID_NUTRICIONISTA   = ?`
+
+    const [resposta] = await con.query(comando, [consulta.assunto, id]);
+    return resposta.affectedRows;
+}
