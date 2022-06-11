@@ -18,7 +18,7 @@ export async function deletarFIlme(id){
     const comando = 
     ` DELETE FROM TB_CONSULTA
                  WHERE ID_CONSULTA = ?`;
-    const [resposta] = await con.queri(comando, [id]);
+    const [resposta] = await con.query(comando, [id]);
     return resposta.affectedRows;
 }
 
