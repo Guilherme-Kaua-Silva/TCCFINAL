@@ -1,9 +1,9 @@
-import { adicionarConsulta, alterarAnotação, removerConsulta } from '../repository/NutriRepository.js'
+import { adicionarConsulta, alterarAnotação, pesquisarConsultasArquivadas, removerConsulta } from '../repository/NutriRepository.js'
 import { Router } from 'express'
 const server = Router();
 
 server.post('/consulta', async (req, resp) => {
-    try{
+    try {
         const consultaParaInserir = req.body
         if (!consultaParaInserir.nome)
             throw new Error('Nome do paciente é obrigatório!');
@@ -20,50 +20,96 @@ server.post('/consulta', async (req, resp) => {
         if (!consultaParaInserir.usuario)
             throw new Error('Usuário não logado!');
 
-       const consulta = await adicionarConsulta(consultaParaInserir);
-       resp.send(consulta);
-    }catch (err){
+        const consulta = await adicionarConsulta(consultaParaInserir);
+        resp.send(consulta);
+    } catch (err) {
         resp.status(400).send({
-            erro:err.message
+            erro: err.message
         })
     }
 })
 
 // deletar consulta
 server.delete('/consulta/:id', async (req, resp) => {
-    try{
+    try {
         const { id } = req.params;
 
         const resposta = await removerConsulta(id);
 
-        if(resposta != 1)
+        if (resposta != 1)
             throw new Error('consulta não pode ser removida')
-    }catch(err){
+    } catch (err) {
         resp.status(400).send({
-            erro:err.message
-        })   
+            erro: err.message
+        })
     }
 })
 
 //alterar anotação
 server.put('/consulta/:id', async (req, resp) => {
-    try{
+    try {
         const { id } = req.params;
-        const consulta = req.body; 
+        const consulta = req.body;
 
         const resposta = await alterarAnotação(id, consulta);
-        if(resposta != 1)
+        if (resposta != 1)
             throw new Error("consulta não pode ser alterada");
-            if (!consulta.assunto)
+        if (!consulta.assunto)
             throw new Error('assunto da consulta é obrigatório!');
         else
             resp.status(204).send();
 
-    }catch(err){
+    } catch (err) {
         resp.status(400).send({
-            erro:err.message
-        })   
+            erro: err.message
+        })
     }
 })
 
 export default server
+
+//incluir anotação
+server.put('/consulta/:id', async (req, resp) => {
+    try {
+        const { id, assunto } = req.params;
+        const consulta = req.body;
+
+        const resposta = await incluirAnotações(id, assunto, consulta);
+        resp.send(resposta);
+
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+
+    }
+})
+
+// pesquisar próximas consultas
+server.put('/consulta/:id', async (req, resp) => {
+    try {
+        const { consulta } = req.body;
+        const resposta = await pesquisarpróximasConsultas(consulta);
+        resp.send(resposta);
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+// pesquisar próximas arquivadas
+server.put('/consulta/:id', async (req, resp) => {
+    try {
+        const { consulta } = req.body;
+        const resposta = await pesquisarConsultasArquivadas(consulta);
+        resp.send(resposta);
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
