@@ -1,4 +1,4 @@
-import { adicionarConsulta, alterarAnotação, pesquisarConsultasArquivadas, removerConsulta } from '../repository/NutriRepository.js'
+import { adicionarConsulta, alterarAnotação, alterarConsulta, pesquisarConsultasArquivadas, removerConsulta } from '../repository/NutriRepository.js'
 import { Router } from 'express'
 const server = Router();
 
@@ -108,6 +108,26 @@ server.put('/consulta/:id', async (req, resp) => {
         resp.send(resposta);
     }
     catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.put('/consulta/data/:id', async (req, resp) => {
+    try {
+        const { id } = req.params;
+        const consulta = req.body;
+
+        const resposta = await alterarConsulta(id, consulta);
+        if (resposta != 1)
+            throw new Error("consulta não pode ser alterada");
+        if (!consulta.data)
+            throw new Error('data da consulta é obrigatório!');
+        else
+            resp.status(204).send();
+
+    } catch (err) {
         resp.status(400).send({
             erro: err.message
         })

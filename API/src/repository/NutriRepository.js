@@ -14,7 +14,7 @@ export async function adicionarConsulta(consulta){
 }
 
 //deletar consulta(4)
-export async function deletarFIlme(id){
+export async function removerConsulta(id){
     const comando = 
     ` DELETE FROM TB_CONSULTA
                  WHERE ID_CONSULTA = ?`;
@@ -66,4 +66,15 @@ export async function pesquisarConsultasArquivadas (consulta){
     consulta.id = resposta.insertId;
 
     return consulta;
+}
+
+//alterar consulta
+export async function alterarConsulta(id, consulta){
+    const comando = 
+        `UPDATE TB_CONSULTA
+            SET DT_CONSULTA        = ?
+          WHERE ID_CONSULTA        = ?`
+
+    const [resposta] = await con.query(comando, [consulta.data, id]);
+    return resposta.affectedRows;
 }
