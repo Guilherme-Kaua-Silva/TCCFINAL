@@ -18,8 +18,8 @@ VALUES ('EDUARDA', '598.485.546-69', '2000.03.08', 'Estou com dificuldades para 
 
 
 -- CSU03:: Efetuar novas consultas
-INSERT INTO TB_CONSULTA (ID_PACIENTE, NM_PACIENTE, DS_ASSUNTO, VL_PRECO, DT_CONSULTA)
-     VALUES (1, 'Eduarda de Oliveira', 'Estou com dificuldades para emagracer', 15.4, '2021.03.04 09:05:00');
+INSERT INTO TB_CONSULTA (ID_PACIENTE, NM_PACIENTE, DS_ASSUNTO, VL_PRECO, DT_CONSULTA, ID_NUTRICIONISTA)
+     VALUES (1, 'Eduarda de Oliveira', 'Estou com dificuldades para emagracer', 15.4, '2021.03.04 09:05:00', 1);
 
 -- CSU04:: remover consulta
 DELETE FROM TB_CONSULTA

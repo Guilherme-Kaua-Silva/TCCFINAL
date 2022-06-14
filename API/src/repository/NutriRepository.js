@@ -7,7 +7,7 @@ export async function adicionarConsulta(consulta){
     VALUES (?, ?, ?, ?, ?);`
 
     //pode dar certo
-    const [resposta] = await con.query(comando, [consulta.paciente, consulta.nome, consulta.assunto, consulta.preco, consulta.data]);
+    const [resposta] = await con.query(comando, [consulta.paciente, consulta.nome, consulta.assunto, consulta.preco, consulta.data, consulta.usuario]);
     consulta.id = resposta.insertId;
 
     return consulta;

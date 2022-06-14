@@ -18,7 +18,7 @@ request(200)
     "preco": 0.0,
     "data": "2022-06-00",
     "assunto":"",
-    "usuário": 0
+    "usuario": 0
 }
 response(204)
 {
@@ -66,7 +66,7 @@ request(200)                     O
     "assunto":"",                O
     "usuario: 0                  O
 }                                O
-000000000000000000000000000000000O
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 (7) /PUT  /consulta/proxima 
 
 request(200)
