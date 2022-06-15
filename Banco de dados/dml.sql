@@ -32,3 +32,9 @@ UPDATE TB_CONSULTA
  WHERE ID_PACIENTE = 1;
 
 
+--Listar consultas
+SELECT ID_PACIENTE			id,
+	  NM_PACIENTE			nome,
+       VL_PRECO		     preco,
+       DT_CONSULTA	          data
+  FROM TB_CONSULTA;

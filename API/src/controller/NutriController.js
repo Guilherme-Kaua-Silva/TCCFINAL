@@ -1,4 +1,4 @@
-import { adicionarConsulta, alterarAnotação, alterarConsulta, pesquisarConsultasArquivadas, removerConsulta } from '../repository/NutriRepository.js'
+import { adicionarConsulta, alterarAnotação, alterarConsulta, listarTodasConsultas, pesquisarConsultasArquivadas, removerConsulta } from '../repository/NutriRepository.js'
 import { Router } from 'express'
 const server = Router();
 
@@ -38,6 +38,7 @@ server.delete('/consulta/:id', async (req, resp) => {
 
         if (resposta != 1)
             throw new Error('consulta não pode ser removida')
+        resp.status(204).send();
     } catch (err) {
         resp.status(400).send({
             erro: err.message
@@ -126,6 +127,16 @@ server.put('/consulta/data/:id', async (req, resp) => {
         else
         resp.status(204).send();
         
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+server.get('/consulta', async (req, resp) => {
+    try {
+        const resposta = await listarTodasConsultas();
+        resp.send(resposta);
     } catch (err) {
         resp.status(400).send({
             erro: err.message
