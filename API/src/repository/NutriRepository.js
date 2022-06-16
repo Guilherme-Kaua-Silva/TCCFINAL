@@ -24,13 +24,16 @@ export async function removerConsulta(id){
 
 //alterar anotações(8)
 
-export async function alterarAnotação(id, consulta) {
+export async function alterarConsulta(id, consulta) {
     const comando = 
-        `UPDATE TB_CONSULTA
-            SET DS_ASSUNTO         = ?
-          WHERE ID_NUTRICIONISTA   = ?`
+    `UPDATE TB_CONSULTA
+        SET NM_PACIENTE  =   ?,
+            VL_PRECO     =   ?,
+            DT_CONSULTA  =   ?,  
+            DS_ASSUNTO   =   ?,
+        WHERE ID_PACIENTE =  ?`
 
-    const [resposta] = await con.query(comando, [consulta.assunto, id]);
+    const [resposta] = await con.query(comando, [ consulta.nome, consulta.preco, consulta.horario, consulta.assunto, id]);
     return resposta.affectedRows;
 }
 
@@ -46,17 +49,6 @@ export async function pesquisarpróximasConsultas (consulta){
      return consulta;
 }
 
-//incluir anotações()
-export async function incluirAnotações(id, assunto, consulta){
-    const comando =
-      ` UPDATE TB_CONSULTA
-         SET DS_ASSUNTO   = ?;
-         WHERE ID_PACIENTE = ?`
-
-         const [resposta] = await con.query(comando , [consulta.id, consulta.assunto, id, assunto])
-         return resposta.affectedRows;
-}
-
 export async function pesquisarConsultasArquivadas (consulta){
     const comando = 
     `INSERT INTO TB_CONSULTA (ID_PACIENTE, NM_PACIENTE, DS_ASSUNTO, VL_PRECO, DT_CONSULTA)
@@ -67,18 +59,6 @@ export async function pesquisarConsultasArquivadas (consulta){
 
     return consulta;
 }
-
-//alterar consulta
-export async function alterarConsulta(id, consulta){
-    const comando = 
-        `UPDATE TB_CONSULTA
-            SET DT_CONSULTA        = ?
-          WHERE ID_CONSULTA        = ?`
-
-    const [resposta] = await con.query(comando, [consulta.data, id]);
-    return resposta.affectedRows;
-}
-
 
 export async function listarTodasConsultas() {
     const comando =

@@ -1,4 +1,4 @@
-import { adicionarConsulta, alterarAnotação, alterarConsulta, listarTodasConsultas, pesquisarConsultasArquivadas, removerConsulta } from '../repository/NutriRepository.js'
+import { adicionarConsulta, alterarConsulta, listarTodasConsultas, pesquisarConsultasArquivadas, removerConsulta } from '../repository/NutriRepository.js'
 import { Router } from 'express'
 const server = Router();
 
@@ -52,9 +52,15 @@ server.put('/consulta/:id', async (req, resp) => {
         const { id } = req.params;
         const consulta = req.body;
 
-        const resposta = await alterarAnotação(id, consulta);
+        const resposta = await alterarConsulta(id, consulta);
         if (resposta != 1)
-            throw new Error("consulta não pode ser alterada");
+            throw new Error("consulta não pode ser alterada!");
+        if (!consulta.nome)
+            throw new Error("nome do paciente é obrigatório!")
+        if (!consulta.preco)
+            throw new Error("preco da consulta é obrigatório!")
+        if (!consulta.horario)
+            throw new Error("horário da consulta é obrigatório!")
         if (!consulta.assunto)
             throw new Error('assunto da consulta é obrigatório!');
         else
@@ -64,25 +70,6 @@ server.put('/consulta/:id', async (req, resp) => {
         resp.status(400).send({
             erro: err.message
         })
-    }
-})
-
-
-//incluir anotação
-server.put('/consulta/:id', async (req, resp) => {
-    try {
-        const { id, assunto } = req.params;
-        const consulta = req.body;
-        
-        const resposta = await incluirAnotações(id, assunto, consulta);
-        resp.send(resposta);
-        
-    }
-    catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        });
-        
     }
 })
 
@@ -101,7 +88,7 @@ server.put('/consulta/:id', async (req, resp) => {
 })
 
 // pesquisar próximas arquivadas
-server.put('/consulta/:id', async (req, resp) => {
+server.get('/consulta/:id', async (req, resp) => {
     try {
         const { consulta } = req.body;
         const resposta = await pesquisarConsultasArquivadas(consulta);
@@ -114,25 +101,6 @@ server.put('/consulta/:id', async (req, resp) => {
     }
 })
 
-server.put('/consulta/data/:id', async (req, resp) => {
-    try {
-        const { id } = req.params;
-        const consulta = req.body;
-        
-        const resposta = await alterarConsulta(id, consulta);
-        if (resposta != 1)
-        throw new Error("consulta não pode ser alterada");
-        if (!consulta.data)
-        throw new Error('data da consulta é obrigatório!');
-        else
-        resp.status(204).send();
-        
-    } catch (err) {
-        resp.status(400).send({
-            erro: err.message
-        })
-    }
-})
 server.get('/consulta', async (req, resp) => {
     try {
         const resposta = await listarTodasConsultas();

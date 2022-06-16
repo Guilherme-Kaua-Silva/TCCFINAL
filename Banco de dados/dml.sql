@@ -26,15 +26,17 @@ DELETE FROM TB_CONSULTA
       WHERE ID_CONSULTA = 1;
 
 
--- CSU08:: alterar anotações consulta
-UPDATE TB_CONSULTA
-   SET DS_ASSUNTO   = 'Estou com dificuldades para emagracer',
- WHERE ID_PACIENTE = 1;
-
-
 --Listar consultas
 SELECT ID_PACIENTE			id,
 	  NM_PACIENTE			nome,
        VL_PRECO		     preco,
        DT_CONSULTA	          data
   FROM TB_CONSULTA;
+
+
+  UPDATE TB_CONSULTA
+  SET NM_PACIENTE  =  "Matheus Soares",
+      VL_PRECO     =   30.8,
+      DT_CONSULTA  =   2022-06-17 09:30:00,  
+      DS_ASSUNTO   =   "Dificuldade em emagrecer",
+  WHERE ID_PACIENTE = 1;
