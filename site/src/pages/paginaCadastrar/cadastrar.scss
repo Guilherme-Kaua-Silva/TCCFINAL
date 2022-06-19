@@ -1,0 +1,117 @@
+.pagina-cadastrar{
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #C1C1C1;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container2{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 0;
+      
+    }
+    .titulo{
+        justify-content: right;
+        margin-bottom: 2em;
+        font-family: 'lemonmilk-regular';
+    }
+    
+    
+    .buttons{
+        display: inline-block;
+        
+        flex-direction: row; 
+    
+    }
+    .botao1{
+        margin-right: 40em;
+        margin-top: 50px;
+    
+    }
+    .botao2{
+    
+        margin-left: 40em;
+        margin-bottom: 40px;
+    
+    }
+    .buttons button{
+        margin-top: 35px;
+        margin-left: 100px;
+        margin-right: 90px;
+        text-decoration: none;
+        border-style: hidden;
+        background-color: #72CC86;
+        padding: 1em 3.5em;
+        border-radius: 25px;
+       
+    }
+    .buttons button a{
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.993);
+    }
+    
+    .buttons button:hover{
+        background-color: #33ac4e;
+        cursor: pointer;
+    }
+    .form{
+        display: flex;
+        flex-direction:column;
+        margin-bottom: 1.1rem;
+        margin-right: 50px;
+       
+    }
+    
+    .form input{
+        margin: 0.2rem 3;
+        padding: 0.4em 1.2em;
+       font-family: 'roboto2';
+        
+    }
+    .form1 input{
+        margin: 0.2rem 3;
+        padding: 0.5em 17em;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.1rem;
+        font-family:'roboto2'
+      
+    }
+    .form2 input{
+        margin: 0.2rem 3;
+        padding: 3em 17em;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.1rem;
+        font-family: 'roboto2';
+    
+    }
+    
+    .box{
+        display: flex;
+        flex-direction: column;
+    }
+    .tudo{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .mudar input{
+    
+        
+        margin-bottom: 1.1rem;
+        
+        margin-right: 50px;
+    
+    }
+}

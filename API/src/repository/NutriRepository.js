@@ -48,7 +48,7 @@ export async function pesquisarpróximasConsultas (consulta){
  
      return consulta;
 }
-
+     //pesquisar consultas arquivadas
 export async function pesquisarConsultasArquivadas (consulta){
     const comando = 
     `INSERT INTO TB_CONSULTA (ID_PACIENTE, NM_PACIENTE, DS_ASSUNTO, VL_PRECO, DT_CONSULTA)
@@ -60,6 +60,7 @@ export async function pesquisarConsultasArquivadas (consulta){
     return consulta;
 }
 
+  //listar todas as consultas
 export async function listarTodasConsultas() {
     const comando =
         `SELECT ID_PACIENTE			id,

@@ -1,0 +1,56 @@
+.pagina-menu{
+    
+    main{
+        display: flex;
+        flex-direction: column;
+    
+        height: 100vh;
+        width: 100%;
+    }
+    
+    .cabecalho{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .c-direita, .c-esquerda{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .c-direita img, .c-esquerda img{
+        width: 50px;
+        height: 50px;
+    
+        
+    }
+    
+    .corpo{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .cabecalho{
+        background-color: #EEAAAA;
+    }
+    
+    .fx-esquerda{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    
+        background-color: #b1cda4;
+    }
+    
+    .botao{
+        background-color: #63976f;
+        border-radius: 20px;
+        padding: 0px 50px;
+    
+        margin-top: 16.8em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}

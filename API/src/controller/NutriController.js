@@ -112,3 +112,4 @@ server.get('/consulta', async (req, resp) => {
     }
 })
 export default server
+

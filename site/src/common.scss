@@ -1,0 +1,48 @@
+a:visited, a:link, a:active{
+    text-decoration: none;
+    color: inherit;
+    
+    padding-left: 20px;
+}
+
+body{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: 'baby';
+    src: url(../assets/fonts/Baby\ Script.ttf);
+}
+
+@font-face {
+    font-family: 'honey';
+    src: url(../assets/fonts/hello\ honey.otf);
+}
+
+@font-face {
+    font-family: 'Muthiara';
+    src: url(../assets/fonts/Muthiara.otf);
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url(../assets/fonts/Roboto-Thin.ttf)
+}
+
+@font-face {
+    font-family: 'roboto2';
+    src: url(../assets/fonts/LEMONMILK-Regular.otf);
+}
+
+@font-face {
+    font-family: 'lemonmilk-regular';
+    src: url(../assets/fonts/LEMONMILK-Regular.otf);
+}
+@font-face {
+    font-family: 'open-sans';
+    src: url(../assets/fonts/OpenSans-VariableFont_wdth,wght.ttf);
+}
+
