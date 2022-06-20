@@ -26,7 +26,7 @@ DELETE FROM TB_CONSULTA
       WHERE ID_CONSULTA = 1;
 
 
---Listar consultas
+-- Listar consultas
 SELECT ID_PACIENTE			id,
 	  NM_PACIENTE			nome,
        VL_PRECO		     preco,
@@ -37,6 +37,6 @@ SELECT ID_PACIENTE			id,
   UPDATE TB_CONSULTA
   SET NM_PACIENTE  =  "Matheus Soares",
       VL_PRECO     =   30.8,
-      DT_CONSULTA  =   2022-06-17 09:30:00,  
-      DS_ASSUNTO   =   "Dificuldade em emagrecer",
+      DT_CONSULTA  =   "2022-06-17 09:30:00",  
+      DS_ASSUNTO   =   "Dificuldade em emagrecer"
   WHERE ID_PACIENTE = 1;

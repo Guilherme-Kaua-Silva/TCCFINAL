@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import './loginadm.scss'
 import {login} from '../../API/usuarioApi'
 
-import { useNavigate } 'react-router-dom';
+import storage from 'local-storage'
+import { useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar'
 import { useState, useRef, useEffect } from 'react'
 
@@ -22,7 +24,7 @@ export default function index(){
         if(storage ('usuario-logado')) {
             navigate('/pagina-2');
         }
-    }, [])
+    }, )
 
     async function entrarClick(){
         ref.current.continuouStart();
