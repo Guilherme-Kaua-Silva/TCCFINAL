@@ -8,6 +8,7 @@ import { useState } from 'react'
 import { toast } from 'react-toastify';
 import { listartodasConsultas, removerConsulta, buscarConsultasPorNome } from '../../api/nutricionistaApi'
 import { useEffect } from 'react'
+import lupa from '../../assets/images/lupa2.png'
 
 export default function ConsultarInformacoes() {
     const [consultas, setConsultas] = useState([]);
@@ -53,39 +54,43 @@ export default function ConsultarInformacoes() {
         setConsultas(resp);
     }
     return (
-        <main className='pagina-consultarinformacoes'>
-            <div className="cabecalho-consultar">
-                <img className="logo1" src={logo} alt='' />
-                <h1>CONSULTAR INFORMAÇÕES SOBRE CLIENTES</h1>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>IDENTIFICAÇÃO</th>
-                        <th>NOME</th>
-                        <th>PRECO</th>
-                        <th>DATA</th>
-                        <th>ASSSUNTO</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {consultas.map(item =>
+            <main className='pagina-consultarinformacoes'>
+                <div className="cabecalho-consultar">
+                    <img className="logo1" src={logo} alt='' />
+                    <h1>CONSULTAR INFORMAÇÕES SOBRE CLIENTES</h1>
+                </div>
+                <div className='caixa-busca'>
+                            <input type="text" placeholder='Buscar Consultas por nome' onClick={buscarConsultasPorNome} />
+                            <img src={lupa} alt='buscar' />
+                        </div>
+                <table>
+                    <thead>
                         <tr>
-                            <td>{item.id}</td>
-                            <td>{item.nome}</td>
-                            <td>{item.preco}</td>
-                            <td>{item.data.substr(0, 10)}</td>
-                            <td>{item.assunto}</td>
-                            <td>
-                                <img src={lapis} alt='editar' /> &nbsp;&nbsp;&nbsp;&nbsp;
-                                <img src={lixo} alt='remover' onClick={() => excluirConsulta(item.id, item.nome)} />
-                            </td>
+                            <th>IDENTIFICAÇÃO</th>
+                            <th>NOME</th>
+                            <th>PRECO</th>
+                            <th>DATA</th>
+                            <th>ASSSUNTO</th>
+                            <th></th>
                         </tr>
-                    )}
-                </tbody>
-
-            </table>
-        </main>
-    )
-}
+                    </thead>
+                    <tbody>
+                        {consultas.map(item =>
+                            <tr>
+                                <td>{item.id}</td>
+                                <td>{item.nome}</td>
+                                <td>{item.preco}</td>
+                                <td>{item.data.substr(0, 10)}</td>
+                                <td>{item.assunto}</td>
+                                <td>
+                                    <img src={lapis} alt='editar' /> &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <img src={lixo} alt='remover' onClick={() => excluirConsulta(item.id, item.nome)} />
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+    
+                </table>
+            </main>
+        )
+    }

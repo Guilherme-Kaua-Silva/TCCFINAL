@@ -33,7 +33,7 @@ export default function Index(){
               const r = await login(email, senha);
               console.log(r);
               storage('usuario-logado', r );
-             
+           
               setTimeout(() => {
                   navigate('/pagina-2');
               }, 3000);    
@@ -79,10 +79,10 @@ export default function Index(){
 
             <div className="botoes">
                 <div className="b1">
-                    <a  href="pagina-1">Voltar</a>
+                    <Link to="/">Voltar</Link>
                 </div>
                 <div className="b2">
-                    <Link to="pagina-2" onClick={entrarClick} disable={carregando}> Entrar </Link>
+                    <Link to="/pagina-2" onClick={entrarClick} disable={carregando}> Entrar </Link>
                 </div>
                 <div> {erro} </div>
             </div>

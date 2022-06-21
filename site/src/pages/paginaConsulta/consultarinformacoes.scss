@@ -1,75 +1,66 @@
 .pagina-consultarinformacoes{
-   
-    
-    
+
+     
+
     .cabecalho-consultar{
         display: flex;
         flex-direction: row;
-        background-color: #EDA5A5;
+        background-color: #eda5a5c5;
         font-family: 'lemon-milk';
     }
-    .titulo{
-        display: flex;
-        flex-direction: row;
-        
+    .cabecalho-consultar h1{
+        color: #fff;
+        padding-top: 30px;
+        padding-left: 50px;
     }
-    .t1{
-        font-family: 'louis';
-    }
-    .agora-vai{
-        display: flex;
-        flex-direction: row;
-        width: 55%;
-    }
-    .cartoes{
-        background-color: #E7A363;
-        border-radius: 50px;
-        width: 700px;
-        margin: 10px;
-    }
-    .parte-de-cima{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        font-family: 'inter';
-    }
-    .parte-de-baixo{
-        display: flex;
-        flex-direction: row;
-        height: 100px;
-        justify-content: space-around;
-        font-family: 'inter';
-    }
-    .edicao1{
-        display: flex;
-        flex-direction: column-reverse;  
-        width: 26px;
-    }
-    .edicao1 > img{
-        height: 25px;
-        width: 25px;
-    }
-    .calendario{
-        display: flex;
-        flex-direction: column;
-        width: 535px;
-        position: relative;
-        left: 770px;
-        bottom: 720px;
-    }
-    .calendario > img{
-        height: 520px;
-        width: 532px;
-        margin-bottom: 100px;
-    }
-
     table {
-        margin: 2em;
         width: 100%;
+        border-collapse: collapse;
+        margin-top: 80px;
+       
     }
-
-    th, td {
+    th {
         text-align: left;
+        color: #fff;
+        padding: 25px 40px;
+        font-size: 14px;
+        text-shadow: 0px 1px 4px rgba(217, 217, 217, 0.315);
+    }
+    thead {
+        background-color: #eda5a5c0;
+    }
+    td {
+        padding: 25px 40px;
+        font-weight: 500;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #EDEDED;
+    }
+    tbody tr:hover {
+        background-color: #e1e1e1;
+    }
+    td img {
+        width: 18px;
+        cursor: pointer;
+    }
+    tr td:nth-child(2) {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap; 
+        width: 100px;
+    }
+    tr td:nth-child(1) {
+        color: #606060;
+        font-weight: 700;
+    }
+    tr td:nth-last-child(1) * {
+        visibility: hidden;
+    }
+    tr:hover td:nth-last-child(1) img {
+        visibility: visible;
+    }
+    .caixa-busca{
+        
     }
 
     }
