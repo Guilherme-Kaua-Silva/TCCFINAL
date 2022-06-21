@@ -61,7 +61,7 @@ export default function ConsultarInformacoes() {
                 </div>
                 <div className='caixa-busca'>
                             <input type="text" placeholder='Buscar Consultas por nome' onClick={buscarConsultasPorNome} />
-                            <img src={lupa} alt='buscar' />
+                          <button onClick={buscarConsultasPorNome}>  <img src={lupa} alt='buscar'/> </button>
                         </div>
                 <table>
                     <thead>

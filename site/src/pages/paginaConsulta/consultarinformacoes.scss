@@ -60,7 +60,32 @@
         visibility: visible;
     }
     .caixa-busca{
-        
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+
+    
+        width:500px;
+        height: 70px;
+        border: 1px solid #606060;
+        margin-left: 200px;
+        margin-top: 50px;
+    }
+
+    .caixa-busca input{
+        width: 80%;
+        height: 100%;
+    
+        font-size: 2em;
+    }
+
+    .caixa-busca input:focus{
+        outline: none;
+    }
+    .caixa-busca img{
+        height: 35px;
+        margin-top: 15px;
+        padding-left: 10px;
     }
 
     }
