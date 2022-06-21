@@ -5,31 +5,45 @@
         flex-direction: column;
     
         height: 100vh;
-        width: 100%;
+        
     }
     
     .cabecalho{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        height: 10vh;
     }
     
     .c-direita, .c-esquerda{
         display: flex;
         flex-direction: row;
         align-items: center;
+        margin-top: 10px;
+        margin-left: 12px;
+      
     }
     
     .c-direita img, .c-esquerda img{
-        width: 50px;
-        height: 50px;
-    
-        
+        width: 75px;
+        height: 75px;
+
+    }
+    .c-direita{
+        height: 7vh;
+    }
+    c-esquerda h1{
+        margin-right: 2px;
     }
     
     .corpo{
         display: flex;
         flex-direction: row;
+    }
+
+    p{
+       margin-left: 50px;
+       margin-top: 30px;
     }
     
     .cabecalho{
@@ -42,17 +56,28 @@
         justify-content: space-between;
     
         background-color: #b1cda4;
+        width: 15em;
+        height: 95.5vh;
     }
+    .fx-esquerda h1{
+          font-size: 1em;
+          cursor: pointer;
+          margin-left: 20px;
+         
+
+    }
+   
     
     .botao{
         background-color: #63976f;
-        border-radius: 20px;
-        padding: 0px 50px;
-    
-        margin-top: 16.8em;
-        margin-bottom: 20px;
+        border-radius: 80px;
+        padding: 20px 5px;
+        color: #ffff;
+        font-size: 20px;
+       
+        margin-bottom: 10px;
         text-align: center;
 
-        // cursor: pointer;
+        cursor: pointer;
     }
 }

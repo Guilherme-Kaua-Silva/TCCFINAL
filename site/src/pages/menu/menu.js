@@ -5,6 +5,7 @@ import gerente from '../../assets/images/gerente.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import Storage from 'local-storage'
+import boloa from '../../assets/images/boloa.png'
 
 export default function Menu(){
     const [usuario, setUsuario] = useState('-');
@@ -34,7 +35,7 @@ export default function Menu(){
         <section>
             <header className="cabecalho">
                 <div className="c-direita">
-                    <img src={barras} alt=""/>
+                  
                     <h1>Área do Administrador: Menu</h1>
                 </div>
                 <div className="c-esquerda">
@@ -46,17 +47,17 @@ export default function Menu(){
                 <div className="fx-esquerda">
                     <div>
                        <Link to="/pagina-4"><h1>NOVA CONSULTA</h1></Link> 
-                       <Link to="/pagina-5"><h1>PRÓXIMAS CONSULTAS</h1></Link> 
-                       <Link to="/pagina-6"><h1>CONSULTAS REALIZADAS</h1></Link>  
+                       <Link to="/pagina-5" ><h1>PRÓXIMAS CONSULTAS</h1></Link> 
+                     
                     </div>
-                        <a className="botao" onClick={sair} >Voltar</a>
+                        <button className="botao" onClick={sair} >Sair</button>
                 </div>
 
-                <div>
-                     <p>Seja Bem Vindo(a), {usuario}!😊</p>
-                </div>
+                     <p>Seja Bem Vindo(a), {usuario}!😄</p>
+                     <img src={boloa} />
+
                 <div className='usuario'>
-                    <span>{usuario[0].toUpperCase()}</span>
+                    <span>{usuario.toUpperCase}</span>
                 </div>
             </div>
         </section>

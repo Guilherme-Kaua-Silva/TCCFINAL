@@ -3,7 +3,7 @@ import './loginadm.scss'
 import {login} from '../../api/usuarioApi'
 
 import storage from 'local-storage'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
 import { useState, useRef, useEffect } from 'react'
 
@@ -82,7 +82,7 @@ export default function Index(){
                     <a  href="pagina-1">Voltar</a>
                 </div>
                 <div className="b2">
-                    <a onClick={entrarClick} disable={carregando}> Entrar </a>
+                    <Link to="pagina-2" onClick={entrarClick} disable={carregando}> Entrar </Link>
                 </div>
                 <div> {erro} </div>
             </div>
