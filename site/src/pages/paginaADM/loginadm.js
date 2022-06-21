@@ -6,6 +6,7 @@ import storage from 'local-storage'
 import { Link, useNavigate } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
 import { useState, useRef, useEffect } from 'react'
+import { toast } from 'react-toastify'
 
 import lista from '../../assets/images/lista.png'
 import dieta from '../../assets/images/dieta-balanceada.png'
@@ -21,7 +22,7 @@ export default function Index(){
     const ref = useRef();
     
     useEffect(() => {
-        if(storage ('usuario-logado')) {
+        if(storage('usuario-logado')) {
             navigate('/pagina-2');
         }
     }, )
@@ -31,16 +32,14 @@ export default function Index(){
         setCarregando(true);
         try {
               const r = await login(email, senha);
-              console.log(r);
               storage('usuario-logado', r );
-           
-              setTimeout(() => {
-                  navigate('/pagina-2');
-              }, 3000);    
+            
+              console.log(r);
         } 
         catch (err) {
             ref.current.complete();
             setCarregando(false);
+          
             if(err.response.status === 401){
                 setErro(err.response.data.erro);
             }
@@ -51,7 +50,7 @@ export default function Index(){
 
     return(
         <main className='pagina-adm'>
-            <LoadingBar color='#f11946' height={4} ref={ref} />
+            <LoadingBar color='#5223ab' height={3} ref={ref} />
         <section className="pg-login">
             <div className="pl-tt">
                 <h1>BEM-VINDO(A) A ÁREA DO ADMINISTRADOR</h1>
@@ -60,8 +59,10 @@ export default function Index(){
             <div className="pl-txt">
                 <p>Faça seu login aqui:</p>
                 <p>(apenas administrador(a) tem acesso)</p>
+               
             </div>
-
+            <br />
+             <div className='container'>
             <p>Login:</p>
             <div className="pl-login">
                 <input type="text" value={email} onChange={e => setEmail(e.target.value)}
@@ -69,7 +70,9 @@ export default function Index(){
                     <img src={lista} alt=""/>
                 
             </div>
-
+            <br></br>
+            <br></br>
+            <br></br>
             <p>Senha:</p>    
             <div className="pl-senha">
                 <input type="password" value={senha} onChange={e => setSenha(e.target.value) }/>
@@ -79,12 +82,13 @@ export default function Index(){
 
             <div className="botoes">
                 <div className="b1">
-                    <Link to="/">Voltar</Link>
+                <button>  <Link to="/">VOLTAR</Link></button>  
                 </div>
                 <div className="b2">
-                    <Link to="/pagina-2" onClick={entrarClick} disable={carregando}> Entrar </Link>
+                    <button onClick={entrarClick} disable={carregando}> ENTRAR </button>
                 </div>
                 <div> {erro} </div>
+            </div>
             </div>
         </section>
     </main>

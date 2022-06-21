@@ -98,6 +98,7 @@ export default function index() {
           <h1>Relatos de pacientes</h1>
           <img src={balao} alt="" />
         </div>
+        <div className="f5-txt">
         <div className="f5-texto">
           <div className="f5-cartao">
             <img src={mulher} alt="" />
@@ -122,6 +123,7 @@ export default function index() {
             também nas redes sociais. Elabora seu plano alimentar de acordo com
             a sua hora e sua rotina. Amei a consulta!"
           </p>
+        </div>
         </div>
       </section>
       <section className="f-7">
@@ -281,7 +283,7 @@ export default function index() {
       <section className="rodape">
         <div className="rodape-pt1">
           <div className="rodape-redes">
-            <h1>Entre em contato conosco, e não fique com dúvidas!</h1>
+            <h1 className="titulo">Entre em contato conosco, e não fique com dúvidas!</h1>
             <div className="elemento">
               <img src={instagram} alt="" />
               <h1>@sheilanutricionis_oficial</h1>
@@ -331,9 +333,7 @@ export default function index() {
           </div>
 
           <hr className="horizontal" />
-          <div className="rodape-pt2">
-            <h1>MEIRELES NUTRICIONISTA</h1>
-          </div>
+          
         </div>
       </section>
     </main>

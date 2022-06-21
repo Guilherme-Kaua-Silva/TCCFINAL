@@ -3,6 +3,7 @@
 }
 
 .pagina-1 {
+    overflow-x:hidden;
     .pagina-total {
         display: flex;
         flex-direction: column;
@@ -76,7 +77,7 @@
     }
 
     .f1-textos h1 {
-        font-family: 'baby';
+        font-family: 'muthiara';
         font-size: 3em;
 
         background-color: #ea9191;
@@ -90,10 +91,10 @@
     }
 
     .faixa-1 h2 {
-        font-family: 'roboto';
-        font-size: 2em;
+        font-family: 'open-sans';
+        font-size: 1.5em;
         margin-left: 1em;
-        margin: 5em;
+        margin: 3.7em;
     }
 
     .f1-textos img {
@@ -117,7 +118,8 @@
     .faixa-2 h2 {
         font-family: 'roboto';
         margin-right: 30px;
-        margin-top: -10em;
+        font-size: 1.5em;
+        
     }
 
     .f2-div {
@@ -126,22 +128,24 @@
     }
 
     .f2-textos h1 {
+
         background-color: #637749;
         border-radius: 16px;
         padding: 20px 20px;
         padding-right: 20px;
         margin-left: 35em;
         margin-right: 30px;
-        font-family: 'roboto';
+        font-family: 'open-sans';
+        font-size: 2em;
         margin-top: -15em;
 
     }
 
     .faixa-3 {
-          display: flex;
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
-        
+        align-content: center;
         border: solid #ea9191 6px;
         background-color: #f8eaf6;
         margin-top: 29.5em;
@@ -153,23 +157,22 @@
     .f3-fotona {
 
         margin: 5em 7em ;
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
 
     .f3-fundo{
-       margin-left: 30em;
+       margin-left: 18em;
     }
 
     .f3-h1 {
         background-color: #ea9191;
-        border-radius: 20px;
-       
+        border-radius: 20px;       
         padding-left: 1em;
         margin-left: 43em;
         margin-right: 43em;
-
-        font-family: 'lemonmilk-regular';
+        font-family: 'muthiara';
+        font-size: 2em;
         margin: -4em 10em;
     }
 
@@ -177,8 +180,10 @@
     .f3-textos p {
         text-align: left;
         margin-left: 18em;
-        margin: 15em;
+        margin: 5em;
         padding: 2em;
+        font-family: 'source-sans';
+        font-size: 1.5em;
     }
 
     .f3-fotona{
@@ -192,19 +197,29 @@
     }
 
     .faixa-5 {
+        display: flex;
+        flex-direction: column;
         background-color: #8aae79;
+        height: 40vh;
+        padding-top: 2em;
     }
-
+    .f5-txt{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
     .f5-tt {
         display: flex;
         flex-direction: row;
+        margin-left: 70px;
     }
 
     .f5-tt h1 {
-        font-family: 'baby';
+        font-family: 'muthiara';
         background-color: #f1f1f1;
         border-radius: 20px;
         padding-right: 20em;
+        padding-left: 20px;
     }
 
     .f5-tt img {
@@ -219,13 +234,15 @@
         flex-direction: column;
         background-color: #f1f1f1;
         border-radius: 10px;
-
+        width: 1500px;
         margin: 20px 30px;
-        padding: 10px 15px;
+        padding: 15px 15px;
     }
 
     .f5-texto p {
-        font-family: 'roboto2';
+        font-family: 'roboto';
+        font-size: 1.5em;
+        
     }
 
     .f5-texto img {
@@ -239,10 +256,11 @@
     }
 
     .f5-cartao h1 {
-        font-family: 'roboto2';
+        font-family: 'louis';
     }
 
     .f-7 {
+        padding-top: 2em;
         background-color: #EEF9E3;
         margin: 0px;
     }
@@ -250,7 +268,7 @@
     .titulo-f7 {
         display: flex;
         font-size: 21.52px;
-        font-family: 'lemonmilk-regular';
+        font-family: 'lemon';
 
     }
 
@@ -286,7 +304,7 @@
     }
 
     .textos-f7>h2 {
-        font-family: 'lemonmilk-regular';
+        font-family: 'lemon';
         margin-left: 2.5em;
     }
 
@@ -294,7 +312,7 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        font-family: 'open-sans';
+        font-family: 'roboto';
         font-size: 16px;
         width: 583px;
         margin-left: 2.5em;
@@ -318,9 +336,10 @@
 
 
     .faixa-7 {
+        padding-top: 2em;
         display: flex;
         flex-direction: column;
-        background-color: #9bbade;
+        background-color: #e7f1f1;
         background-repeat: no-repeat;
         height: 100%;
         background-size: 100%;
@@ -329,33 +348,30 @@
     }
 
     .tipos {
+        
         font-family: 'louis';
         font-size: 30px;
         color: #ffffff;
-        background-color: #D9A87B;
+        background-color: #9bbade;
         display: flex;
         justify-content: start;
         margin-left: 90px;
         margin-right: 180px;
         border-radius: 8px;
-        border-style: solid;
         padding-left: 40px;
-        border-color: black;
-        border-width: thin;
+        
 
     }
 
     .f7-cartao {
-        background-color: #D9A87B;
+        background-color: #9bbadeb0;
         border-radius: 10px;
         padding: 10px 10px;
         display: flex;
         flex-direction: column;
         width: 293px;
         margin-bottom: 30px;
-        border-style: solid;
-        border-color: #5E2727;
-        border-width: thin;
+        
     }
 
     .img1 {
@@ -365,10 +381,11 @@
     }
 
     .cartoes {
+        padding-top: 1em;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-
+        
 
     }
 
@@ -385,25 +402,25 @@
     }
 
     .p1 {
-        font-family: 'source';
+        font-family: 'source-sans';
         font-size: 22px;
         padding-left: 20px;
     }
 
     .p2 {
-        font-family: 'source';
+        font-family: 'source-sans';
         font-size: 22px;
         padding-left: 20px;
     }
 
     .p3 {
-        font-family: 'source';
+        font-family: 'source-sans';
         font-size: 22px;
         padding-left: 20px;
     }
 
     .faixa-precos {
-        background-color: #F2F8ED;
+        background-color: #dbe6e6;
     }
 
     .fp-f1 {
@@ -464,7 +481,7 @@
     }
 
     .faixa-precos>h1 {
-        font-family: "louis viton";
+        font-family: "louis";
     }
 
     .faixa-8 {
@@ -477,6 +494,9 @@
 
 
         padding: 7em 0em;
+    }
+    .fiaxa-8 > p{
+        font-family: 'louis';
     }
 
     .f8-pt1 {
@@ -511,7 +531,7 @@
         border-radius: 10px;
         padding: 20px 30px;
 
-        font-family: 'roboto2';
+        font-family: 'lemon';
     }
 
     .f8-pt1-img img {
@@ -549,8 +569,12 @@
     }
 
     .elemento h1 {
+        
         font-size: 15px;
         margin-left: 5px;
+    }
+    .titulo{
+        padding-bottom: 1em;
     }
 
     .elemento-m img {
@@ -580,9 +604,7 @@
         height: 1em;
     }
 
-    .horizontal {
-        width: 80em;
-    }
+    
 
     .rodape-pt2 {
         text-align: center;
@@ -617,7 +639,7 @@
         .elemento,
         .elemento-m {
             display: flex;
-            flex-direction: row9;
+            flex-direction: row;
         }
     }
 }

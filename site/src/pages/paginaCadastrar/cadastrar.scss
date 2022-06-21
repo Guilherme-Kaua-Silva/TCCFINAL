@@ -1,33 +1,53 @@
 .pagina-cadastrar{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+
 
     padding: 2em;
     min-height: calc(100vh);
-    background-color: #72CC86;
+    background-color: #eeaeaeb4;
+
+
 
     .container2{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         //padding: 1rem;
-      
     }
     .titulo{
         justify-content: right;
         margin-bottom: 2em;
         font-family: 'lemonmilk-regular';
     }
-    
-    
+
+
     .buttons{
         display: inline-block;
-        flex-direction: row; 
+        flex-direction: row;
+        margin-bottom: 2vh;
     }
 
-    .botao1{
-        margin-right: 40em;
-        margin-top: 50px;
-    }
+    .buttons1{
+        button{
+        padding-top: 5vh;
+        text-decoration: none;
+        border-style: hidden;
+        background-color: #ffffff;
+        padding: 1em 3.5em;
+        border-radius: 25px;
 
+        }
+        padding-top: 3.7vh;
+    }
+    .bordinha{
+        border: 2px 2px solid #000000;
+        background-color: #4646462f;
+        border-radius: 15px;
+        height: 60vh;
+        padding: 30px;
+    }
     .botao2{
         margin-left: 40em;
         margin-bottom: 40px;
@@ -39,18 +59,22 @@
         margin-right: 90px;
         text-decoration: none;
         border-style: hidden;
-        background-color: #72CC86;
+        background-color: #ffffff;
         padding: 1em 3.5em;
         border-radius: 25px;
-       
+
     }
     .buttons button a{
         text-decoration: none;
         color: rgba(0, 0, 0, 0.993);
     }
-    
+
     .buttons button:hover{
-        background-color: #33ac4e;
+        background-color: #6e6d6dda;
+        cursor: pointer;
+    }
+    .buttons1 button:hover{
+        background-color: #6e6d6dda;
         cursor: pointer;
     }
     .form{
@@ -58,34 +82,47 @@
         flex-direction:column;
         margin-bottom: 1.1rem;
         margin-right: 50px;
-       
+
     }
-    
+
     .form input{
-        margin: 0.2rem 3;
+        margin: 1rem 5;
         padding: 0.4em 1.2em;
        font-family: 'roboto2';
-        
+
     }
     .form1 input{
+        border-radius: 15px;
         margin: 0.2rem 3;
-        padding: 0.5em 17em;
+        height: 10vh;
+        width: 48.5vw;
         display: flex;
         flex-direction: column;
         margin-bottom: 1.1rem;
         font-family:'roboto2'
-      
+
     }
-    .form2 input{
+    .form3{
+         margin: 0.2rem 3;
+        height: 10vh;
+        width: 48.5vw;
+    }
+    .form2 textarea{
+        border-radius: 15px;
         margin: 0.2rem 3;
-        padding: 3em 17em;
+        height: 10vh;
+        width: 48.5vw;
         display: flex;
+        max-width: 48.5vw;
+        max-height: 20vh;
+        min-width: 48.5vw;
+        min-height: 5vh;
         flex-direction: column;
         margin-bottom: 1.1rem;
         font-family: 'roboto2';
-    
+
     }
-    
+
     .box{
         display: flex;
         flex-direction: column;
@@ -95,9 +132,18 @@
         display: flex;
         flex-direction: column;
     }
-    
+
     .mudar input{
         margin-bottom: 1.1rem;
         margin-right: 50px;
+        border-radius: 20px;
+        height: 20px;
+        border: 1px solid #fff;
+    }
+
+    .botões{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }

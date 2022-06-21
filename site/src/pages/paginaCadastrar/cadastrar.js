@@ -46,47 +46,47 @@ export default function Cadastrar(){
     }
 
     return(
-        <main className="pagina-cadastrar">
-      
-            <div className="titulo">
-                <h3>CADASTRO:</h3>
-            </div>
-         <div className="container2">
-            <div className="form1">
-                <label>Nome:</label>
-                <input type="text" value={nome} onChange={e => setNome(e.target.value)}/>
-            </div>
-          
-            <div className="mudar">
-
-            <div classNmae="form1">
-                <label>Preço:</label>
-                <input type="text" value={preco} onChange={e => setPreco(e.target.value)}/>
-            </div>
-
-            </div>
-           
-            <div className="form2">
-                <label>Assunto:</label>
-                <input type="text" value={assunto} onChange={e => setAssunto(e.target.value)}/>
-              </div>
-              <div className="form">
-                 <label>Data da Consulta:</label>
-                 <input type="date" value={data} onChange={e => setData(e.target.value)}/>
-               </div>
-        
-              </div>
-              <div className="botões">
-                <div className="buttons">
-               <Link to="/pagina-2">Voltar</Link>
+            <main className="pagina-cadastrar">
+                <div className='bordinha'>
+                    <div className="titulo">
+                        <h3>CADASTRO:</h3>
+                    </div>
+                    <div className="container2">
+                        <div className="form1">
+                            <label>Nome:</label>
+                            <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
+                        </div>
+    
+                        <div className="mudar">
+    
+                            <div classNmae="form3">
+                                <label>Preço:</label>
+                                <input type="number" value={preco} onChange={e => setPreco(e.target.value)} />
+                            </div>
+    
+                        </div>
+    
+                        <div className="form2">
+                            <label>Assunto:</label>
+                            <textarea value={assunto} onChange={e => setAssunto(e.target.value)} />
+                        </div>
+                        <div className="form">
+                            <label>Data da Consulta:</label>
+                            <input type="date" value={data} onChange={e => setData(e.target.value)} />
+                        </div>
+    
+                    </div>
+                    <div className="botões">
+                        <div className="buttons1">
+                            <button href="/pagina-2"><a>VOLTAR</a></button>
+                        </div>
+                        <div className="buttons">
+                            <button><a onClick={salvarConsulta}>{id === 0 ? 'CADASTRAR' : 'ALTERAR'}</a></button>
+                        </div>
+                    </div>
                 </div>
-               <div className="buttons">
-               <button><a onClick={salvarConsulta}>{id === 0 ? 'CADASTRAR' : 'ALTERAR'}</a></button>
-               <button><a onClick={novoClick}>NOVA CONSULTA</a></button>
-                </div>
-             </div>
-
-           </main>
-    );
+            </main>
+        );
+    
 }
 
