@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
+import './common.scss'
 import './index.css';
+
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-confirm-alert/src/react-confirm-alert.css'
+
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -22,7 +26,7 @@ root.render(
     <ToastContainer/>
     <BrowserRouter>
       <Routes>
-        <Route path = '/pagina-1' element ={<Pagina1/>}/>
+        <Route path = '/' element ={<Pagina1/>}/>
         <Route path = '/pagina-2' element ={<Pagina2/>}/>
         <Route path = '/pagina-3' element ={<Pagina3/>}/>
         <Route path = '/pagina-4' element ={<Pagina4/>}/>

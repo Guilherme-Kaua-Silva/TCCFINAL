@@ -1,8 +1,6 @@
 .pagina-consultarinformacoes{
-    body{
-        display: flex;
-        flex-direction: column;
-    }
+   
+    
     
     .cabecalho-consultar{
         display: flex;
@@ -65,5 +63,13 @@
         margin-bottom: 100px;
     }
 
+    table {
+        margin: 2em;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+    }
 
     }

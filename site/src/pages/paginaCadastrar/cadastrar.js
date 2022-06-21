@@ -1,23 +1,25 @@
-import './cadastrar.scss'
-import { useState} from 'react'
-import { cadastrarConsulta, alterarConsulta} from '../../API/nutricionistaApi'
-import storage from 'local-storage'
+import './cadastrar.scss';
+import { useState} from 'react';
+import { cadastrarConsulta, alterarConsulta} from '../../api/nutricionistaApi';
+import Storage from 'local-storage';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 
 
 
 
-export default function index(){
+export default function Cadastrar(){
+
     const[nome, setNome] = useState('');
     const[preco, setPreco] = useState(0);
     const[data, setData] = useState('');
     const[assunto, setAssunto] = useState('');
     const[id, setId] = useState(0);
 
-    function salvarConsulta() {
+        async function salvarConsulta() {
           try {
-              const usuario = storage('usuario-logado').id;
+              const usuario = Storage('usuario-logado').id;
 
               if(id == 0){ 
                 const novaConsulta = await cadastrarConsulta(nome, preco, data, assunto, usuario) 
@@ -34,6 +36,7 @@ export default function index(){
              toast.error(err.response.data.erro);
           }
     }
+
     function novoClick(){
         setId(0);
         setNome('');
@@ -69,16 +72,16 @@ export default function index(){
               </div>
               <div className="form">
                  <label>Data da Consulta:</label>
-                 <input type="number" value={data} onChange={e => setData(e.target.value)}/>
+                 <input type="date" value={data} onChange={e => setData(e.target.value)}/>
                </div>
         
               </div>
               <div className="botões">
                 <div className="buttons">
-               <button><a href="menu.html">Voltar</a></button>
+               <Link to="/pagina-2">Voltar</Link>
                 </div>
                <div className="buttons">
-               <button><a href="./paginaADM/index.js" onClick={salvarConsulta}>{id === 0 ? 'CADASTRAR' : 'ALTERAR'}</a></button>
+               <button><a onClick={salvarConsulta}>{id === 0 ? 'CADASTRAR' : 'ALTERAR'}</a></button>
                <button><a onClick={novoClick}>NOVA CONSULTA</a></button>
                 </div>
              </div>

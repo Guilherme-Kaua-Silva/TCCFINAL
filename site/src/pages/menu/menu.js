@@ -1,23 +1,29 @@
 import './menu.scss'
 
-
 import barras from '../../assets/images/tres_barrinha.png'
 import gerente from '../../assets/images/gerente.png'
-import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import Storage from 'local-storage'
 
-export default function index(){
-    const [ usuario, setUsuario] = useState('-');
+export default function Menu(){
+    const [usuario, setUsuario] = useState('-');
 
     const navigate = useNavigate();
+
+    function sair() {
+        Storage.remove('usuario-logado');
+        navigate('/');
+    }
     
     useEffect(() => {
       
-       if(!storage('usuario-logado')) {
+       if(!Storage('usuario-logado')) {
            navigate('/');
 
        }
        else{
-           const usuarioLogado =storage('usuario-logado')
+           const usuarioLogado = Storage('usuario-logado')
            setUsuario(usuarioLogado.nome);
        }
 
@@ -39,11 +45,11 @@ export default function index(){
             <div className="corpo">
                 <div className="fx-esquerda">
                     <div>
-                       <a href="cadastro.html"><h1>NOVA CONSULTA</h1></a> 
-                       <a href="proximas.html"><h1>PRÓXIMAS CONSULTAS</h1></a> 
-                      <a href="consultasr.html"><h1>CONSULTAS REALIZADAS</h1></a>  
+                       <Link to="/pagina-4"><h1>NOVA CONSULTA</h1></Link> 
+                       <Link to="/pagina-5"><h1>PRÓXIMAS CONSULTAS</h1></Link> 
+                       <Link to="/pagina-6"><h1>CONSULTAS REALIZADAS</h1></Link>  
                     </div>
-                        <a className="botao" href="pgadm.html">Voltar</a>
+                        <a className="botao" onClick={sair} >Voltar</a>
                 </div>
 
                 <div>

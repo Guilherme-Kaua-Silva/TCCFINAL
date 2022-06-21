@@ -5,6 +5,10 @@ const server = Router();
 server.post('/consulta', async (req, resp) => {
     try {
         const consultaParaInserir = req.body
+
+        console.log(consultaParaInserir)
+
+
         if (!consultaParaInserir.nome)
             throw new Error('Nome do paciente é obrigatório!');
 
@@ -46,8 +50,26 @@ server.delete('/consulta/:id', async (req, resp) => {
     }
 })
 
-//alterar anotação
+//incluir anotação
 server.put('/consulta/:id', async (req, resp) => {
+    try {
+        const { id, assunto } = req.params;
+        const consulta = req.body;
+
+        const resposta = await incluirAnotações(id, assunto, consulta);
+        resp.send(resposta);
+
+    }
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        });
+
+    }
+})
+
+//alterar anotação
+server.put('/alterarAnotacao/:id', async (req, resp) => {
     try {
         const { id } = req.params;
         const consulta = req.body;
@@ -74,7 +96,7 @@ server.put('/consulta/:id', async (req, resp) => {
 })
 
 // pesquisar próximas consultas
-server.put('/consulta/:id', async (req, resp) => {
+server.put('/pesquisarConsulta/:id', async (req, resp) => {
     try {
         const { consulta } = req.body;
         const resposta = await pesquisarpróximasConsultas(consulta);
@@ -111,5 +133,5 @@ server.get('/consulta', async (req, resp) => {
         })
     }
 })
-export default server
+export default server;
 

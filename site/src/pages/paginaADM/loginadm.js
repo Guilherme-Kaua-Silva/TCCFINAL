@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import './loginadm.scss'
-import {login} from '../../API/usuarioApi'
+import {login} from '../../api/usuarioApi'
 
 import storage from 'local-storage'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar'
 import { useState, useRef, useEffect } from 'react'
 
@@ -11,7 +11,7 @@ import lista from '../../assets/images/lista.png'
 import dieta from '../../assets/images/dieta-balanceada.png'
 
 
-export default function index(){
+export default function Index(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [erro, setErro] = useState('');
@@ -27,15 +27,15 @@ export default function index(){
     }, )
 
     async function entrarClick(){
-        ref.current.continuouStart();
+        ref.current.continuousStart();
         setCarregando(true);
         try {
               const r = await login(email, senha);
+              console.log(r);
               storage('usuario-logado', r );
              
               setTimeout(() => {
                   navigate('/pagina-2');
-
               }, 3000);    
         } 
         catch (err) {
@@ -51,7 +51,7 @@ export default function index(){
 
     return(
         <main className='pagina-adm'>
-            <LoadingBar color='#fffff' ref={ref} />
+            <LoadingBar color='#f11946' height={4} ref={ref} />
         <section className="pg-login">
             <div className="pl-tt">
                 <h1>BEM-VINDO(A) A ÁREA DO ADMINISTRADOR</h1>
@@ -82,7 +82,7 @@ export default function index(){
                     <a  href="pagina-1">Voltar</a>
                 </div>
                 <div className="b2">
-                    <a href="pagina-2" onClick={entrarClick} disable={carregando}> Entrar </a>
+                    <a onClick={entrarClick} disable={carregando}> Entrar </a>
                 </div>
                 <div> {erro} </div>
             </div>

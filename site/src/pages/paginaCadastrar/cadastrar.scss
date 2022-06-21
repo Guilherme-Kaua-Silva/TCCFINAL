@@ -1,22 +1,14 @@
 .pagina-cadastrar{
-    body{
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #C1C1C1;
-    }
-    *{
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
+
+    padding: 2em;
+    min-height: calc(100vh);
+    background-color: #72CC86;
+
     .container2{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding: 1rem 0;
+        //padding: 1rem;
       
     }
     .titulo{
@@ -28,21 +20,19 @@
     
     .buttons{
         display: inline-block;
-        
         flex-direction: row; 
-    
     }
+
     .botao1{
         margin-right: 40em;
         margin-top: 50px;
-    
     }
+
     .botao2{
-    
         margin-left: 40em;
         margin-bottom: 40px;
-    
     }
+
     .buttons button{
         margin-top: 35px;
         margin-left: 100px;
@@ -107,11 +97,7 @@
     }
     
     .mudar input{
-    
-        
         margin-bottom: 1.1rem;
-        
         margin-right: 50px;
-    
     }
 }

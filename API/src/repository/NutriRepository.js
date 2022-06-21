@@ -63,11 +63,12 @@ export async function pesquisarConsultasArquivadas (consulta){
   //listar todas as consultas
 export async function listarTodasConsultas() {
     const comando =
-        `SELECT ID_PACIENTE			id,
-        NM_PACIENTE			       nome,
-         VL_PRECO		           preco,
-         DT_CONSULTA	           data
-    FROM TB_CONSULTA`;
+        `SELECT ID_CONSULTA			id,
+                NM_PACIENTE			nome,
+                VL_PRECO		    preco,
+                DS_ASSUNTO          assunto,
+                DT_CONSULTA	        data
+           FROM TB_CONSULTA`;
     
     const [linhas] = await con.query(comando);
     return linhas;
