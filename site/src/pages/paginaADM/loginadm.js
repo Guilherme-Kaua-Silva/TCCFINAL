@@ -35,6 +35,9 @@ export default function Index(){
               storage('usuario-logado', r );
             
               console.log(r);
+              setTimeout(() => {
+                navigate('/pagina-2');
+            }, 3000);    
         } 
         catch (err) {
             ref.current.complete();
@@ -85,7 +88,7 @@ export default function Index(){
                 <button>  <Link to="/">VOLTAR</Link></button>  
                 </div>
                 <div className="b2">
-                    <button onClick={entrarClick} disable={carregando}> ENTRAR </button>
+                    <button><Link onClick={entrarClick} disable={carregando}> ENTRAR </Link> </button>
                 </div>
                 <div> {erro} </div>
             </div>

@@ -146,8 +146,8 @@
         flex-direction: row;
         justify-content: space-between;
         align-content: center;
-        border: solid #ea9191 6px;
-        background-color: #f8eaf6;
+        
+        background-color: #e7f1f1;
         margin-top: 29.5em;
         
       
@@ -166,7 +166,7 @@
     }
 
     .f3-h1 {
-        background-color: #ea9191;
+        background-color: #9bbade;
         border-radius: 20px;       
         padding-left: 1em;
         margin-left: 43em;
@@ -199,8 +199,8 @@
     .faixa-5 {
         display: flex;
         flex-direction: column;
-        background-color: #8aae79;
-        height: 40vh;
+        background-color: #dbe6e6;
+        height: 50vh;
         padding-top: 2em;
     }
     .f5-txt{
@@ -273,10 +273,11 @@
     }
 
     .titulo-f7>h1 {
-        background-color: #8aaf7999;
+        background-color: #b0cda2;
         border-radius: 50px;
         margin-left: 10em;
         padding: 0em 1.8em;
+        font-size: 1.5em;
     }
 
     .f7-jt {
@@ -298,8 +299,9 @@
 
     .textos-f7 {
         border-radius: 50px;
-        background-color: #8aaf7999;
+        background-color: #b0cda2;
         width: 684px;
+        
 
     }
 
@@ -313,9 +315,10 @@
         justify-content: center;
         align-content: center;
         font-family: 'roboto';
-        font-size: 16px;
+        
         width: 583px;
         margin-left: 2.5em;
+        font-size: 1.5em;
     }
 
     .img-atleta {
@@ -384,7 +387,7 @@
         padding-top: 1em;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
         
 
     }
@@ -431,7 +434,7 @@
     }
 
     .fp1-plano-simples {
-        background-color: rgba(234, 144, 144, 0.6);
+        background-color: rgba(234, 145, 145, 0.6);
         border-radius: 40px;
         padding: 10px 200px;
         margin: 40px;
@@ -539,7 +542,7 @@
     }
 
     .rodape {
-        background-color: #36352e;
+        background-color: #7776739a;
         color: white;
         font-family: 'roboto';
     }
