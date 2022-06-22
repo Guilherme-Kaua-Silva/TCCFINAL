@@ -60,7 +60,7 @@ export default function ConsultarInformacoes() {
                     <h1>CONSULTAR INFORMAÇÕES SOBRE CLIENTES</h1>
                 </div>
                 <div className='caixa-busca'>
-                            <input type="text" placeholder='Buscar Consultas por nome' onClick={buscarConsultasPorNome} />
+                            <input type="text" placeholder='Buscar Consultas por nome' onChange={buscarConsultasPorNome} />
                           <button onClick={buscarConsultasPorNome}>  <img src={lupa} alt='buscar'/> </button>
                         </div>
                 <table>
@@ -83,7 +83,7 @@ export default function ConsultarInformacoes() {
                                 <td>{item.data.substr(0, 10)}</td>
                                 <td>{item.assunto}</td>
                                 <td>
-                                    <img src={lapis} alt='editar' /> &nbsp;&nbsp;&nbsp;&nbsp;
+                                   &nbsp;&nbsp;&nbsp;&nbsp;
                                     <img src={lixo} alt='remover' onClick={() => excluirConsulta(item.id, item.nome)} />
                                 </td>
                             </tr>

@@ -25,6 +25,7 @@ import balanca from "../../assets/images/balanca.png";
 import lista from "../../assets/images/lista.png";
 import nova from "../../assets/images/nova.png";
 import fundo from "../../assets/images/fundo.png";
+import {Link} from 'react-router-dom'
 
 export default function index() {
   return (
@@ -37,7 +38,7 @@ export default function index() {
               <p>MEIRELLES</p>
             </div>
             <div className="bs-div">
-              <a href="pagina-3">ÁREA ADMINISTRATIVA</a>
+              <Link to="/pagina-3">ÁREA ADMINISTRATIVA</Link>
             </div>
           </div>
         </nav>
